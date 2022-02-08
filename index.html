@@ -133,7 +133,35 @@ button:active,.ss:active {
 .fore{color: gold !important;font-weight:400}
 #cw_m{color: #f23;font-weight: bold;text-shadow: 1px 1px 5px rgba(255,127,127,0.5)}
 
+* {
+  scrollbar-width: thick;
+  scrollbar-color: #07f #147;
+}
+*::-webkit-scrollbar {
+  width: 20px;
+}
+*::-webkit-scrollbar-track {
+  background: #147;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #07f;
+  border-radius: 20px;
+  border: 3px solid #147;
+}
 
+table{
+  counter-reset: rowNumber;
+}
+tbody tr::before {
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  position:relative;
+}
+thead tr::before{
+  counter-increment: (rowNumber+1);
+  content: "#";
+  position:relative; top:12px
+}
 thead tr td{text-align: center;font-size: 2em}
 td{font-family: mono}
 table tbody tr td:last-child{text-align: right;}
