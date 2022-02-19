@@ -596,8 +596,7 @@ function paint(n)
 	for(i=0;i< da.length;i++)
 	{
 		r=document.createElement("tr");
-		r.innerHTML = `<td>${da[i][0]}</td><td>${(Number(da[i][1])/1e9).toFixed(9)}</td>`
-		r.innerHTML += n>1 ? "<td>${"?"}</td>" : "";
+		r.innerHTML = `<td>${da[i][0]}</td><td>${(Number(da[i][1])/1e9).toFixed(9)}</td>`;
 		t.appendChild(r);
 	}
 }
