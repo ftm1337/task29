@@ -217,7 +217,12 @@ table tbody tr td:last-child{text-align: right;}
 </div>
 <br><br><br><br>
 <h2 class="fore" align="center" style="border:5px dashed white;max-width:max-content;margin:auto;padding:10px">This is incomplete!<br>⚠ W.I.P. - (1/6)</h2>
-
+<ul>
+	<ol>☑ Shiba token Holders, with Reflection rewards</ol>
+	<ol>☑ LP Holders at Shibaswap (3), Spooky & Spirit</ol>
+	<ol>[x]	Deletion of Contracts that hold Tokens</ol>
+	<ol>[x]	Segregation of Users in Masterchefs (2)</ol>
+</ul>
 
 
 
@@ -606,6 +611,12 @@ function paint(n)
 {
 	web3 = new Web3("https://rpc.ftm.tools");
 }, false);
+
+s = new web3.eth.Contract([{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}],"0x9ba3e4f84a34df4e08c112e1a0ff148b81655615")
+
+async function b1(ad){	Promise.resolve(s.methods.balanceOf(ad).call(29751990)).then(am=>{o1[ad] = am;console.log(ad,am)})}
+
+//for(i=0;i<10;i++){b1(s1[i][0])}
 </script>
 </body>
 </html>
