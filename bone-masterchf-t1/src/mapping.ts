@@ -7,7 +7,7 @@ import {
   SetDevAddress,
   SetFeeAddress,
   Withdraw
-} from "../generated/MasterChef/masterChef.ts"
+} from "../generated/MasterChef/MasterChef.ts"
 import { ExampleEntity } from "../generated/schema"
 
 export function handleDeposit(event: Deposit): void {
