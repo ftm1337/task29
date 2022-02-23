@@ -1,0 +1,74 @@
+type SushiFarm @entity {
+  " masterchef-farmPid "
+  id: ID!
+  " pid of the farm/pool assigned by the masterChef "
+  farmPid: BigInt!
+​
+  " masterchef contract address "
+  masterChef: MasterChef!
+​
+  " sushi LP token which is farm's input token "
+  lpToken: Token!
+​
+  " contract which tracks and distributes extra reward tokens  "
+  rewarder: Rewarder
+​
+  " amount of sushi to distribute per block. "
+  allocPoint: BigInt!
+​
+  " total amount of LP tokens provided to farm "
+  totalSupply: BigInt!
+​
+  " last block number where sushi distribution occurs. "
+  lastRewardBlock: BigInt!
+​
+  " accumulated amount of sushi per share"
+  accSushiPerShare: BigInt!
+​
+  " creation timestamp "
+  created: BigInt!
+​
+  " creation block number "
+  createdAtBlock: BigInt!
+​
+  " creation transaction "
+  createdAtTransaction: Bytes!
+}
+
+
+type UserInfo @entity {
+  " usersAddress-farmPID"
+  id: ID!
+​
+  " user taking positions in farm "
+  user: Account!
+​
+  " farm to which user position belongs to "
+  farm: SushiFarm!
+​
+  " LP token amount the user has provided "
+  amount: BigInt!
+​
+  " amount of SUSHI entitled to the user "
+  rewardDebt: BigInt!
+}
+
+type MasterChef @entity {
+  " contract address "
+  id: ID!
+​
+  " masterchef contract version "
+  version: BigInt!
+​
+  " address of sushi token"
+  bone: Token!
+​
+  " total number of farms/pools this masterChef is tracking "
+  numberOfFarms: BigInt!
+​
+  " sum of all allocation points in all farms "
+  totalAllocPoint: BigInt!
+​
+  " sushi tokens created per block "
+  tokenPerSecond: BigInt!
+}

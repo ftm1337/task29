@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/node /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin/yarn install
+
+PATH: 
+  /usr/local/lib/nodejs/node-v16.14.0-linux-x64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOSPC: no space left on device, write
+
+npm manifest: 
+  {
+    "name": "bone-masterchf-t1",
+    "license": "UNLICENSED",
+    "scripts": {
+      "codegen": "graph codegen",
+      "build": "graph build",
+      "deploy": "graph deploy --node https://api.thegraph.com/deploy/ ftm1337/bone-masterchf-t1",
+      "create-local": "graph create --node http://localhost:8020/ ftm1337/bone-masterchf-t1",
+      "remove-local": "graph remove --node http://localhost:8020/ ftm1337/bone-masterchf-t1",
+      "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 ftm1337/bone-masterchf-t1"
+    },
+    "dependencies": {
+      "@graphprotocol/graph-cli": "0.26.0",
+      "@graphprotocol/graph-ts": "0.24.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
